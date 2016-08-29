@@ -5,6 +5,11 @@ import com.vikram.learn.api.StockItem
 
 class StockItemOverviewResponseMessage {
 
-    StockItem stockItem
-    List<SalesOrderItemResponseMessage> salesOrderItemResponseMessages
+    StockItemResponseMessage stockItemResponseMessage
+    List<SalesOrderItemResponseMessage> lineItems
+
+    StockItemOverviewResponseMessage(StockItemResponseMessage stockItemResponseMessage, List<SalesOrderItemResponseMessage> salesOrderItemResponseMessages) {
+        this.stockItemResponseMessage = stockItemResponseMessage
+        this.lineItems = salesOrderItemResponseMessages
+    }
 }

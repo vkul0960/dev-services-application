@@ -5,6 +5,8 @@ import com.google.inject.Injector
 import com.vikram.learn.config.LearnConfiguration
 import com.vikram.learn.resource.HellowWorldResource
 import com.vikram.learn.resource.InventoryResource
+import com.vikram.learn.resource.SalesOrderItemResource
+import com.vikram.learn.resource.StockResource
 import io.dropwizard.Application
 import io.dropwizard.setup.Bootstrap
 import io.dropwizard.setup.Environment
@@ -29,5 +31,7 @@ class MyServicesApplication extends Application<LearnConfiguration> {
 //
 //        environment.jersey().register(resource)
         environment.jersey().register(injector.getInstance(InventoryResource))
+        environment.jersey().register(injector.getInstance(SalesOrderItemResource))
+        environment.jersey().register(injector.getInstance(StockResource))
     }
 }

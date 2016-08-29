@@ -1,7 +1,17 @@
 package com.vikram.learn.api.message
 
-/**
- * Created by vkul0960 on 8/28/2016.
- */
 class BusinessPartner {
+    String supplierName
+    String street
+    String postalCode
+    String city
+    String state
+
+    BusinessPartner(String supplierName, String street, String postalCode, String city, String state) {
+        this.supplierName = supplierName
+        this.street = street
+        this.postalCode = postalCode
+        this.city = city
+        this.state = state
+    }
 }

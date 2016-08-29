@@ -5,6 +5,8 @@ import com.google.inject.Provides
 import com.google.inject.Singleton
 import com.vikram.learn.config.LearnConfiguration
 import com.vikram.learn.provider.InventoryItemProvider
+import com.vikram.learn.provider.SalesOrderItemProvider
+import com.vikram.learn.provider.StockProvider
 import io.dropwizard.db.ManagedDataSource
 import io.dropwizard.jdbi.DBIFactory
 import io.dropwizard.setup.Environment
@@ -35,6 +37,15 @@ class MyGuiceModule extends AbstractModule {
         jdbi.onDemand(InventoryItemProvider)
     }
 
+    @Provides
+    public SalesOrderItemProvider prepareSalesOrderItemProvider(DBI jdbi) {
+        jdbi.onDemand(SalesOrderItemProvider)
+    }
+
+    @Provides
+    public StockProvider prepareStockProvider(DBI jdbi) {
+        jdbi.onDemand(StockProvider)
+    }
 
     @Override
     protected void configure() {

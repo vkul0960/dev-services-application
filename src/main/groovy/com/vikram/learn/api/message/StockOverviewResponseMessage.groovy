@@ -1,7 +1,10 @@
 package com.vikram.learn.api.message
 
-/**
- * Created by vkul0960 on 8/28/2016.
- */
 class StockOverviewResponseMessage {
+
+    List<StockItemOverviewResponseMessage> itemCollection
+
+    StockOverviewResponseMessage(List<StockItemOverviewResponseMessage> stockItemOverviewResponseMessages) {
+        this.itemCollection = stockItemOverviewResponseMessages
+    }
 }
